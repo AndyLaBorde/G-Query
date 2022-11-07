@@ -49,3 +49,18 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 
 - Links to the deployed application and the GitHub repository
 
+## Mock Up
+
+
+
+## Deployed Application
+
+// Under Construction //
+
+## Credits
+
+Collaborators: Kermit and the Frogs
+
+## License
+
+Please refer to the LICENSE in the repo.
