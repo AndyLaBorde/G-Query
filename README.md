@@ -1,5 +1,5 @@
-# Gamer-Q : video game search engine
-## 07 Project 1: Interactive Front-End Application
+# Gamer-Q : Video Game Search Engine
+## Project 1: Interactive Front-End Application
 
 At the conclusion of each phase of this course, you’ll work with a group of your fellow students to create a **project**. A project is collaborative work among a group of developers to create an application that solves a real-world problem. Projects model the experience you’ll encounter in every development role at any company, from large multinational businesses to small startups. Coding is collaborative.
 
