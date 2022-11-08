@@ -6,7 +6,7 @@ var rawgIoURL = 'https://api.rawg.io/api/games?search=' + game + '&key=' + key;
 var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
 var genreURL = 'https://api.rawg.io/api/genres?&key=' + key
 var gameURL = 'https://api.rawg.io/api/games?&key=' + key
-console.log(platformsURL)
+// console.log(platformsURL)
 // var test = document.getElementById('cardBox')
 // var div = document.createElement('div')
 // var stringTest = "helllo World"
@@ -20,13 +20,24 @@ console.log(platformsURL)
 // </div>`
 // test.append(div)
 
-// fetch(triviaURL)
-//     .then(function (response) {
-//         return response.json()
+fetch(triviaURL)
+    .then(function (response) {
+        return response.json()
 
-//     }).then(function (data) {
-//         console.log(data)
-//     })
+    }).then(function (data) {
+        // console.log(data)
+        for (let i = 0; i < data.results.length; i++) {
+            // console.log(data.results[i])
+            var question = data.results[i].question
+            var correctAnswer = data.results[i].correct_answers
+            var incorrecAnswerArray = []
+            console.log(question)
+            console.log(correctAnswer)
+            incorrecAnswerArray.push(data.results[i].incorrect_answers)
+            console.log(incorrecAnswerArray)
+
+        }
+    })
 
 // fetch(rawgIoURL)
 //     .then(function (response) {
@@ -40,7 +51,7 @@ fetch(gameURL)
         return response.json()
 
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
 
         // console.log(data.results[0].name)
 
@@ -50,7 +61,7 @@ fetch(gameURL)
             var dimage = data.results[i].background_image
             // genre is an array need to to get all platforms per game
             var genre = data.results[i].genres[0].name
-            // platforms is an array need to to get all platforms per game
+            // platforms is an array need to to get all platforms per game`
             var platform = data.results[i].platforms[0].platform.name
             var maturity = data.results[i].esrb_rating.name
             // playable is an array need to to get all playable per game for single player or multiplayer
@@ -70,6 +81,7 @@ fetch(gameURL)
             <p class="card-text">${platform}</p>
             <p class="card-text">${maturity}</p>
              <p class="card-text">${playable}</p>
+             
               <p class="card-text">${released}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
