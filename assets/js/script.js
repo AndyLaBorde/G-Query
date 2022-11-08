@@ -12,3 +12,11 @@ var url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=hard&typ
 //         </div>
 // </div>`
 // test.append(div)
+
+fetch(url)
+    .then(function (response) {
+        return response.json()
+
+    }).then(function (data) {
+        console.log(data)
+    })
