@@ -1,14 +1,5 @@
 var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=hard&type=multiple"
-fetch(youtubeURL)
-    .then(function (response) {
-        return response.json()
-    }).then(function (data) {
-        let videoid = data.items[0].id.videoId
-        console.log(videoid)
-        target = 'https://www.youtube.com/watch?app=desktop&v=' + videoid;
-        // window.open(target, '_blank').focus();
-        console.log(target)
-    })
+var QuestionArray = []
 
 fetch(triviaURL)
     .then(function (response) {
