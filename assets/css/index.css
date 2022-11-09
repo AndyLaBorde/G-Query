@@ -26,3 +26,9 @@ body{
     display: none;
 }
 
+.custom-height {
+        /* border-top-left-radius: calc(0.25rem - 1px);
+        border-top-right-radius: calc(0.25rem - 1px); */
+        min-height: 30%;
+        max-height: 30%;
+}
