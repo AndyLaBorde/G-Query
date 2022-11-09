@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.custom-bg-gif{
+    background-image: url("../images/hacker-gif.gif");
+    background-size: 100%;
+    max-height: fit-content;
+}
+
+.custom-bg-img {
+    background-image: url("../images/gamer-img.jpg");
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    
+}
+

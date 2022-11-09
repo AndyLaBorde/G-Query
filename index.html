@@ -4,19 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <title>gamerQuery</title>
 </head>
 <body>
-    <article id="searchContainer">
-        <!-- Bootstrap form for side bar -->
-        <!-- search boxes for each API or one search box requesting from both API's simutaneously. -->
-    </article>
-    <main>
-        <div id="cardBox">
-            <!-- Bootstrap card groups to display retrieved data from both API's -->
-        </div>
-    </main>
+    <div id="container" class="row vh-100 p-3 mb-2  text-light ">
+        <article id="sideBar" class="col-3 d-flex justify-content-center align-items-center flex-wrap pt-5 ">
+            <form class="col-11 m-2 border border-3 border-black p-3 bg-light box-shadow rounded-3 ">
+                <h2 class="text-dark">Find A New Game</h2>
+                <!-- text input -->
+                <div class="input-group mb-3">
+                    
+                    <input type="text" class="form-control" placeholder="Name..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <!-- drop down selector -->
+                <div class="input-group mb-3 row justify-content-center">
+                    <!-- dropdown menu for genre -->
+                    <select class="custom-select col-5 m-2" id="inputGroupSelect01" aria-placeholder="Select a filter">
+                        <option value="" disable selected hidden>Genre</option>
+                        <option value="1">Action</option>
+                        <option value="2">Action-Adventure</option>
+                        <option value="3">Survival</option>
+                        <option value="4">Horror</option>
+                        <option value="5">Puzzle</option>
+                        <option value="6">Adventure</option>
+                        <option value="7">Sports</option>
+                        <option value="8">Racing</option>
+                        <option value="9">Action</option>
+                    </select>
+                    <!-- dropdown for platform -->
+                    <select class="custom-select col-5 m-2" id="inputGroupSelect01" aria-placeholder="Select a filter">
+                        <option value="" disable selected hidden>Platform</option>
+                        <option value="1">PC</option>
+                        <option value="2">PlayStation</option>
+                        <option value="3">XBox</option>
+                        <option value="4">Nintendo</option>
+                        <option value="5">GameCube</option>
+                        
+                    </select>
+                </div>
+                <button class="btn btn-outline-secondary bg-dark text-light" type="submit">Search</button>
+            </form>
+            <!-- Bootstrap form for side bar -->
+            <!-- create custom css file to give cool backgrounds -->
+            <div id="toTrivia" class=" border border-3 border-info p-2 m-3 rounded-3  text-light custom-bg-gif d-flex justify-content-center align-items-center ">
+                <h3 class="p-3">Test Your Game Knowledge!</h3>
+                <h5 class="p-3">Play a quick game of trivia by clicking HERE!!</h5>
+            </div>
+            <!-- search boxes for each API or one search box requesting from both API's simutaneously. -->
+        </article>
+        <main class="col-9 p-2 custom-bg-img">
+            <div id="cardBox" class="bg-light ">
+                <!-- Bootstrap card groups to display retrieved data from both API's -->
+            </div>
+        </main>
+    </div>
     
     <script src="./assets/js/script.js"></script>
 </body>
