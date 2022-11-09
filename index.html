@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script
       src="https://kit.fontawesome.com/731ef402c1.js"
       crossorigin="anonymous"
     ></script>
@@ -15,18 +15,66 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
     <title>gamerQuery</title>
-  </head>
-  <body>
-    <article id="searchContainer">
-      <!-- Bootstrap form for side bar -->
-      <!-- search boxes for each API or one search box requesting from both API's simutaneously. -->
-    </article>
-    <main>
-      <div id="cardBox">
-        <!-- Bootstrap card groups to display retrieved data from both API's -->
-      </div>
-    </main>
+</head>
+<body>
+    <div id="container" class="row vh-100 p-3 mb-2  text-light ">
+        <article id="sideBar" class="col-3 d-flex justify-content-center align-items-center flex-wrap pt-5 ">
+            <img src="./assets/images/g-query-logo.png" class="col-5">
+            <form class="col-11 m-2 border border-3 border-black p-3 bg-light box-shadow rounded-3 ">
+                <h2 class="text-dark">Find A New Game</h2>
+                <!-- text input -->
+                <div class="input-group mb-3">
+                    
+                    <input type="text" class="form-control" placeholder="Name..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <!-- drop down selector -->
+                <div class="input-group mb-3 row justify-content-center">
+                    <!-- dropdown menu for genre -->
+                    <select class="custom-select col-5 m-2" id="inputGroupSelect01" aria-placeholder="Select a filter">
+                        <option value="" disable selected hidden>Genre</option>
+                        <option value="1">Action</option>
+                        <option value="2">Action-Adventure</option>
+                        <option value="3">Survival</option>
+                        <option value="4">Horror</option>
+                        <option value="5">Puzzle</option>
+                        <option value="6">Adventure</option>
+                        <option value="7">Sports</option>
+                        <option value="8">Racing</option>
+                        <option value="9">Action</option>
+                    </select>
+                    <!-- dropdown for platform -->
+                    <select class="custom-select col-5 m-2" id="inputGroupSelect01" aria-placeholder="Select a filter">
+                        <option value="" disable selected hidden>Platform</option>
+                        <option value="1">PC</option>
+                        <option value="2">PlayStation</option>
+                        <option value="3">XBox</option>
+                        <option value="4">Nintendo</option>
+                        <option value="5">GameCube</option>
+                        
+                    </select>
+                </div>
+                <button class="btn btn-outline-secondary bg-dark text-light" type="submit">Search</button>
+            </form>
+            <!-- Bootstrap form for side bar -->
+            <!-- create custom css file to give cool backgrounds -->
+            <div id="toTrivia" class=" border border-3 border-info p-2 m-3 rounded-3  text-light custom-bg-gif d-flex justify-content-center align-items-center ">
+                <h4 class="p-3">Do you have what it takes??</h4>
+                <h4>Test Your Game Knowledge!</h4>
+                <h4 class="p-3">PLAY TRIVIA HERE!!</h4>
+            </div>
+            <!-- search boxes for each API or one search box requesting from both API's simutaneously. -->
+        </article>
+        <main class="col-9 p-2 custom-bg-img">
+            <div id="cardBox" class="p-4 d-flex flex-wrap justify-content-center align-items-center">
+                <!-- Bootstrap card groups to display retrieved data from both API's -->
+            </div>
+        </main>
+    </div>
+    
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
