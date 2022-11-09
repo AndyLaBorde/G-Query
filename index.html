@@ -15,7 +15,11 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link rel="stylesheet" href="./assets/css/index.css" />
     <title>gamerQuery</title>
   </head>
@@ -49,33 +53,35 @@
               aria-placeholder="Select a filter"
             >
               <option value="" disable selected hidden>Genre</option>
-              <option value="1">Action</option>
-              <option value="2">Action-Adventure</option>
-              <option value="3">Survival</option>
-              <option value="4">Horror</option>
-              <option value="5">Puzzle</option>
-              <option value="6">Adventure</option>
-              <option value="7">Sports</option>
-              <option value="8">Racing</option>
-              <option value="9">Action</option>
+              <option value="4">Action</option>
+              <option value="3">Adventure</option>
+              <option value="2">Shooter</option>
+              <option value="59">Massive Multiplayer</option>
+              <option value="7">Puzzle</option>
+              <option value="10">Strategy</option>
+              <option value="15">Sports</option>
+              <option value="1">Racing</option>
+              <option value="5">RPG</option>
             </select>
             <!-- dropdown for platform -->
             <select
               class="custom-select col-5 m-2"
               id="inputGroupSelect01"
+              id="inputGroupSelect02"
               aria-placeholder="Select a filter"
             >
               <option value="" disable selected hidden>Platform</option>
-              <option value="1">PC</option>
-              <option value="2">PlayStation</option>
-              <option value="3">XBox</option>
-              <option value="4">Nintendo</option>
-              <option value="5">GameCube</option>
+              <option value="4">PC</option>
+              <option value="187">PlayStation 5</option>
+              <option value="186">XBox Series X/S</option>
+              <option value="7">Nintendo Switch</option>
+              <option value="11">Wii</option>
             </select>
           </div>
           <button
             class="btn btn-outline-secondary bg-dark text-light"
             type="submit"
+            id="submit"
           >
             Search
           </button>
@@ -117,6 +123,19 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/index.js"></script>
+  </head>
+  <body>
+    <article id="searchContainer">
+      <!-- Bootstrap form for side bar -->
+      <!-- search boxes for each API or one search box requesting from both API's simutaneously. -->
+    </article>
+    <main>
+      <div id="cardBox">
+        <!-- Bootstrap card groups to display retrieved data from both API's -->
+      </div>
+    </main>
+
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

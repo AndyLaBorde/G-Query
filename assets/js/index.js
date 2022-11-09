@@ -3,25 +3,39 @@ var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=ha
 game = "Halo"
 key = "a799090a494c45c5b353265fd2772ec0"
 var rawgIoURL = 'https://api.rawg.io/api/games?search=' + game + '&key=' + key;
-var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
-var genreURL = 'https://api.rawg.io/api/genres?&key=' + key
+// var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
+// var genreURL = 'https://api.rawg.io/api/genres?&key=' + key
 var gameURL = 'https://api.rawg.io/api/games?&key=' + key
 var youtubeApiKey = "AIzaSyAwJ4Tla_g2vHjV5OuMWM6QpbxOVMMnz1k"
 var QuestionArray = []
-var slugs = "halo"
-var youtubeURL = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
+// var genreURL = 'https://api.rawg.io/api/genres/4?&key=' + key
+// var youtubeURL = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
 
 var counter = 0;
 
-
-
-fetch(rawgIoURL)
+function fetchGenre (genreNumber) {
+fetch(genreNumber)
     .then(function (response) {
         return response.json()
 
     }).then(function (data) {
         console.log(data)
     })
+}
+fetch(platformsURL)
+    .then(function (response) {
+        return response.json()
+
+    }).then(function (data) {
+        console.log(data)
+    })
+// fetch(rawgIoURL)
+//     .then(function (response) {
+//         return response.json()
+
+//     }).then(function (data) {
+//         console.log(data)
+//     })
 fetch(gameURL)
     .then(function (response) {
         return response.json()
@@ -77,11 +91,11 @@ var youtubeButton = document.getElementById('cardBox')
 // var test = document.getElementById('cardBox')
 
 youtubeButton.addEventListener('click', function (event) {
-    // console.log('kk')
+
     if (event.target.className == 'btn btn-primary youtube-btn') {
-        console.log("yoyu")
+
         var slugs = event.target.getAttribute("data-slug");
-        console.log(slugs)
+
         var youtubeURLs = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
         fetch(youtubeURLs)
             .then(function (response) {
@@ -89,7 +103,7 @@ youtubeButton.addEventListener('click', function (event) {
             })
             .then(function (data) {
                 let videoid = data.items[0].id.videoId
-                console.log("hello")
+
 
                 target = 'https://www.youtube.com/watch?app=desktop&v=' + videoid;
                 window.open(target, '_blank')
@@ -97,3 +111,24 @@ youtubeButton.addEventListener('click', function (event) {
     }
 });
 
+var submit = document.getElementById('submit')
+
+submit.addEventListener('click', function (event) {
+    event.preventDefault()
+    var genreName = grabGenre()
+    fetchGenre(genreName)
+
+
+
+})
+function grabGenre() {
+    var genreOptions = document.getElementById('inputGroupSelect01').value
+    // console.log(genreOptions)
+    var genreURL = 'https://api.rawg.io/api/genres/'+genreOptions+'?&key=' + key
+    return genreURL
+}
+
+function grabPlatform(){
+    var platformOptions = document.getElementById('inputGroupSelect02').value
+    // var platformsURL = 'https://api.rawg.io/api/platforms?&key=
+}
