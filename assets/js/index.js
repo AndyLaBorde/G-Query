@@ -13,7 +13,6 @@ var QuestionArray = []
 var test = document.getElementById('cardBox')
 var counter = 0;
 
-<<<<<<< HEAD
 function genreFetch(genreURL) {
 
     fetch(genreURL)
@@ -54,15 +53,6 @@ function gameFetch(gameURL) {
             }
         })
 }
-=======
-fetch(genreURL)
-    .then(function (response) {
-        return response.json()
-
-    }).then(function (data) {
-        console.log(data)
-    })
->>>>>>> main
 
 // fetch(rawgIoURL)
 //     .then(function (response) {
@@ -146,17 +136,12 @@ var submit = document.getElementById('submit')
 
 submit.addEventListener('click', function (event) {
     event.preventDefault()
-<<<<<<< HEAD
     // var genreName = grabGenre()
     // var platformName = grabPlatfrom()
 
 
-=======
-    var genreName = grabGenre()
->>>>>>> main
 
     var genreOptions = document.getElementById('inputGroupSelect01').value
-<<<<<<< HEAD
     var platformOptions = document.getElementById('inputGroupSelect02').value
     var searchGame = document.getElementById('searchGame').value
     if (genreOptions !== "" && platformOptions !== "" && searchGame !== "") {
@@ -247,8 +232,4 @@ function RenderCards(data) {
     }
 
 
-=======
-    // console.log(genreOptions)
-    return genreOptions
->>>>>>> main
 }
