@@ -6,75 +6,13 @@ var rawgIoURL = 'https://api.rawg.io/api/games?search=' + game + '&key=' + key;
 var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
 var genreURL = 'https://api.rawg.io/api/genres?&key=' + key
 var gameURL = 'https://api.rawg.io/api/games?&key=' + key
+var youtubeApiKey = "AIzaSyAwJ4Tla_g2vHjV5OuMWM6QpbxOVMMnz1k"
 var QuestionArray = []
-// console.log(platformsURL)
-// var test = document.getElementById('cardBox')
-// var div = document.createElement('div')
-// var stringTest = "helllo World"
-// div.innerHTML = `<div class="card" style="width: 18rem;">
-//     <img class="card-img-top" src="..." alt="Card image cap">
-//         <div class="card-body">
-//             <h5 class="card-title">${stringTest}</h5>
-//             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//             <a href="#" class="btn btn-primary">Go somewhere</a>
-//         </div>
-// </div>`
-// test.append(div)
+var slugs = "halo"
+var youtubeURL = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
+
 var counter = 0;
-fetch(triviaURL)
-    .then(function (response) {
-        return response.json()
 
-    }).then(function (data) {
-
-        // console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-            // console.log(data.results[i])
-            var question = data.results[i].question
-            var correctAnswer = data.results[i].correct_answer
-            var incorrecAnswerArray = []
-
-            incorrecAnswerArray.push(data.results[i].incorrect_answers)
-
-            QuestionArray.push({
-                questionD: question,
-                choices: [
-                    choice = incorrecAnswerArray[0][0],
-                    choice = incorrecAnswerArray[0][1],
-                    choice = incorrecAnswerArray[0][2]
-                ],
-                answer: correctAnswer
-
-
-
-            })
-
-
-        }
-        renderCards(QuestionArray)
-    })
-
-function renderCards(QuestionArray) {
-    var cardBox = document.getElementById('searchContainer')
-    console.log(QuestionArray)
-    var question = QuestionArray[0].questionD
-    // console.log(question)
-    // console.log(QuestionArray[0].choices)
-    var choiceArray = QuestionArray[0].choices
-
-    choiceArray.forEach(element => {
-        // element.slice(0, element.indexOf('['))
-        console.log(element)
-        const button = document.createElement("button");
-        button.innerText = element;
-        cardBox.appendChild(button)
-        button.addEventListener("click", function () {
-            alert("hello")
-        });
-
-
-    })
-}
 
 
 fetch(rawgIoURL)
@@ -122,7 +60,7 @@ fetch(gameURL)
              <p class="card-text">${playable}</p>
              
               <p class="card-text">${released}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary youtube-btn" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
         </div>
 </div>`
             test.append(div)
@@ -135,4 +73,27 @@ fetch(gameURL)
 
 
     })
+var youtubeButton = document.getElementById('cardBox')
+// var test = document.getElementById('cardBox')
+
+youtubeButton.addEventListener('click', function (event) {
+    // console.log('kk')
+    if (event.target.className == 'btn btn-primary youtube-btn') {
+        console.log("yoyu")
+        var slugs = event.target.getAttribute("data-slug");
+        console.log(slugs)
+        var youtubeURLs = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
+        fetch(youtubeURLs)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                let videoid = data.items[0].id.videoId
+                console.log("hello")
+
+                target = 'https://www.youtube.com/watch?app=desktop&v=' + videoid;
+                window.open(target, '_blank')
+            })
+    }
+});
 
