@@ -54,19 +54,19 @@ fetch(gameURL)
             var test = document.getElementById('cardBox')
             var div = document.createElement('div')
             // console.log(title)
-            div.innerHTML = `<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="${dimage}" alt="Card image cap">
-        <div class="card-body">
+            div.innerHTML = `<div class="card m-3 bg-dark" style="width: 18rem; height: 36rem;">
+    <img class="card-img-top custom-height" src="${dimage}" alt="Card image cap">
+        <div class="card-body m-3">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${genre}</p>
             <p class="card-text" id="stars">${rating}</p>
             
             <p class="card-text">${platform}</p>
             <p class="card-text">${maturity}</p>
-             <p class="card-text">${playable}</p>
-             
-              <p class="card-text">${released}</p>
-            <a href="#" class="btn btn-primary youtube-btn" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
+            <p class="card-text">${playable}</p>
+            
+            <p class="card-text">${released}</p>
+            <a href="#" class="btn btn-primary youtube-btn align-item-end" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
         </div>
 </div>`
             test.append(div)
