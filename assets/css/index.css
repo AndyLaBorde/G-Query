@@ -4,6 +4,7 @@
 
 body{
     background-color: black;
+    overflow:hidden;
 }
 
 .custom-bg-gif{
@@ -19,7 +20,9 @@ body{
     /* background-position: bottom; */
     background-repeat: no-repeat;
     background-color: black;
-    
-    
+}
+
+.custom-scroll {
+    display: none;
 }
 
