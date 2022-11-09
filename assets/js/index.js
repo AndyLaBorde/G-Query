@@ -3,8 +3,8 @@ var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=ha
 game = "Halo"
 key = "a799090a494c45c5b353265fd2772ec0"
 var rawgIoURL = 'https://api.rawg.io/api/games?search=' + game + '&key=' + key;
-// var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
-// var genreURL = 'https://api.rawg.io/api/genres?&key=' + key
+var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
+var genreURL = 'https://api.rawg.io/api/genres?&key=' + key
 var gameURL = 'https://api.rawg.io/api/games?&key=' + key
 var youtubeApiKey = "AIzaSyAwJ4Tla_g2vHjV5OuMWM6QpbxOVMMnz1k"
 var QuestionArray = []
@@ -13,22 +13,14 @@ var QuestionArray = []
 
 var counter = 0;
 
-function fetchGenre (genreNumber) {
-fetch(genreNumber)
+fetch(genreURL)
     .then(function (response) {
         return response.json()
 
     }).then(function (data) {
         console.log(data)
     })
-}
-fetch(platformsURL)
-    .then(function (response) {
-        return response.json()
 
-    }).then(function (data) {
-        console.log(data)
-    })
 // fetch(rawgIoURL)
 //     .then(function (response) {
 //         return response.json()
@@ -116,19 +108,10 @@ var submit = document.getElementById('submit')
 submit.addEventListener('click', function (event) {
     event.preventDefault()
     var genreName = grabGenre()
-    fetchGenre(genreName)
-
-
 
 })
 function grabGenre() {
     var genreOptions = document.getElementById('inputGroupSelect01').value
     // console.log(genreOptions)
-    var genreURL = 'https://api.rawg.io/api/genres/'+genreOptions+'?&key=' + key
-    return genreURL
-}
-
-function grabPlatform(){
-    var platformOptions = document.getElementById('inputGroupSelect02').value
-    // var platformsURL = 'https://api.rawg.io/api/platforms?&key=
+    return genreOptions
 }
