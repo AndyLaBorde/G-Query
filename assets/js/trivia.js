@@ -1,6 +1,8 @@
 var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple"
 var timerEl = document.getElementById("seconds");
 var questionArray = []
+var scores = JSON.parse(localStorage.getItem("highScores")) || [];
+var gameOverDiv = document.getElementById('gameOver');
 var counter = 0
 var correctCounter = 0
 fetch(triviaURL)
@@ -13,7 +15,7 @@ fetch(triviaURL)
         for (let i = 0; i < data.results.length; i++) {
             // console.log(data.results[i])
             var question = data.results[i].question
-            console.log(question)
+            // console.log(question)
             var correctAnswer = data.results[i].correct_answer
             var incorrecAnswerArray = []
 
@@ -122,16 +124,77 @@ function selectAnswers(event) {
     buttonText.textContent = ""
     // console.log(counter)
     counter++
-    if (questionArray[counter] == undefined) {
-        gameOver() } else {
-    renderCards(counter)
+    if (questionArray[counter] === undefined) {
+        gameOver();
+    } else {
+        renderCards(counter)
     }
 }
 
 function gameOver() {
-    console.log(gameOver)
+    
     alert("Congratulations! You got " + correctCounter + "/" + questionArray.length + " correct!")
 
-    
+    createForm();
     }
+    
+function createForm(){
+        
+        // creates form element to hold input and submit button
+        var createForm = document.createElement("form");
+        createForm.setAttribute("id", "createForm");
+        // create input element and provide attributes and styling
+        var createInput = document.createElement("input");
+        createInput.setAttribute("id", "createInput");
+        createInput.setAttribute("name", "userName");
+        createInput.setAttribute("placeholder", "Enter your initials...")
+        // submit button for form
+        var createBtn = document.createElement("button");
+        createBtn.setAttribute("id", "createBtn");
+        createBtn.setAttribute("type", "submit");
+        createBtn.textContent = "Save your score!";
+        
+        // appending created elements to page
+        createForm.appendChild(createInput);
+        createForm.appendChild(createBtn);
+        gameOverDiv.append(createForm);
 
+        var submitBtn = document.getElementById("createBtn");
+        submitBtn.addEventListener("click", function(event){
+            event.preventDefault();
+            saveHighScore();
+        });
+}
+
+function saveHighScore() {
+    //set value of final score
+    var finalScore = correctCounter / questionArray.length + timeLeft;
+    var userName = document.getElementById("createInput").value;
+    console.log("Username: " + userName);
+    console.log("Score: " + finalScore);
+    var highScoreObject = {
+        initals: userName,
+        score: finalScore,
+    };
+    scores.push(highScoreObject);
+    
+    localStorage.setItem("highScores", JSON.stringify(scores));
+    viewHighScore();
+}
+
+function viewHighScore() {
+    // highScores.innerHTML= "";
+    
+    var localScoresStorage = JSON.parse(localStorage.getItem("highScores")) || [];
+    console.log(localScoresStorage);
+    gameOverDiv.textContent = "HIGH SCORES:"
+
+    for (var i = 0; i < localScoresStorage.length; i++) {
+    var scoresDiv = document.createElement("div");
+
+    console.log(localScoresStorage[i]);
+    scoresDiv.textContent = `${localScoresStorage[i].initals}: ${localScoresStorage[i].score}`;
+    
+    final.appendChild(scoresDiv);
+    }
+}
