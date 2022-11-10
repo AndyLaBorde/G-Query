@@ -82,8 +82,8 @@ fetch(gameURL)
     <img class="card-img-top custom-height" src="${dimage}" alt="Card image cap">
         <div class="card-body m-3">
             <h5 class="card-title">${title}</h5>
-            <p class="card-text">${genre}</p>
-            <p class="card-text" id="stars">${rating} </p>
+            <p class="card-text hide">${genre}</p>
+            <p class="card-text hide" id="stars">${rating} </p>
             
             
             <p class="card-text hide">${platform}</p>
@@ -233,7 +233,7 @@ function RenderCards(data) {
 
 }
 
-$('#toTrivia').on("click", function(){
+$('#toTrivia').on("click", function () {
     var newWindow = window.open();
     newWindow.document.location.href = "./quiz.html";
 })
