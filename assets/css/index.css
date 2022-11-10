@@ -1,34 +1,56 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    background-color: black;
-    overflow:hidden;
+body {
+  background-color: black;
+  overflow: hidden;
 }
 
-.custom-bg-gif{
-    background-image: url("../images/hacker-gif.gif");
-    background-size: 100%;
-    max-height: fit-content;
+.custom-bg-gif {
+  background-image: url("../images/hacker-gif.gif");
+  background-size: 100%;
+  max-height: fit-content;
 }
 
 .custom-bg-img {
-    background-image: url("../images/gamer-img.jpg");
-    height:100%;
-    background-position: center;
-    /* background-position: bottom; */
-    background-repeat: no-repeat;
-    background-color: black;
+  background-image: url("../images/gamer-img.jpg");
+  height: 100%;
+  background-position: center;
+  /* background-position: bottom; */
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 .custom-scroll {
-    display: none;
+  display: none;
 }
 
 .custom-height {
-        /* border-top-left-radius: calc(0.25rem - 1px);
+  /* border-top-left-radius: calc(0.25rem - 1px);
         border-top-right-radius: calc(0.25rem - 1px); */
-        min-height: 30%;
-        max-height: 30%;
+  min-height: 30%;
+  max-height: 30%;
+}
+.hide {
+  display: none;
+}
+.card {
+  opacity: 90%;
+}
+.card:hover .hide {
+  display: block;
+}
+.card:hover {
+  opacity: 100%;
+  background-color: aliceblue !important;
+  color: black;
+  border: 5px solid red;
+}
+.card .card-body.hover {
+}
+
+.youtube-btn:hover {
+  transform: translateY(4px);
+  background-color: red;
 }
