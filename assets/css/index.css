@@ -36,7 +36,7 @@ body {
   display: none;
 }
 .card {
-  opacity: 90%;
+  opacity: 80%;
 }
 .card:hover .hide {
   display: block;
