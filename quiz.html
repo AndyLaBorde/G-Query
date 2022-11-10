@@ -23,15 +23,17 @@
           <p>Click start to begin the game!</p>
           <p>Answer all the questions before the time runs out!</p>
           <p>Your score will be the time at the end of the game.</p>
-          <button type="button" class="btn btn-lg btn-secondary">START</button>
+          <button type="button" class="btn btn-lg btn-secondary" id="startBtn">
+            START
+          </button>
           <h1 id="timerText"></h1>
           <section id="question-container" class="hide">
-            <div id="questions">Questions</div>
+            <div id="questions"></div>
             <div id="answers-btns" class="btn-layout"></div>
           </section>
 
           <section id="gameOver" class="hide">
-            <h1>You completed the game</h1>
+            <h1></h1>
             <ul id="displayAnswerList"></ul>
             <ul id="finalScoresDisplay"></ul>
           </section>
