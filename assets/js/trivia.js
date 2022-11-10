@@ -1,4 +1,5 @@
 var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple"
+var timerEl = document.getElementById("seconds");
 var questionArray = []
 var counter = 0
 var correctCounter = 0
@@ -43,12 +44,36 @@ fetch(triviaURL)
         }
         // renderCards()
     })
+    var timeLeft = 75;
 
     var startBtn = document.getElementById('startBtn');
     startBtn.addEventListener("click", function() {
-        renderCards(counter)
+        
+        var timer = setInterval(function() {
+        if (timeLeft > 1) {
+            timerEl.textContent = "Timer: " + timeLeft + " seconds remaining";
+            timeLeft--;
+            
+        } else if (timeLeft === 1) {
+            timerEl.textContent = "Timer: " + timeLeft + "second remaining";
+            timeLeft--;
+            // clearing interval if time runs out
+        } else {
+            timerEl.textContent = "Out of time!"
+            // Use clearInterval() to stop the timer
+            clearInterval(timer);
+        }
+        // clearing intervasl if user answers all the questions
+        if (counter >= questionArray.length) {
+            timerEl.textContent = "Finished with time to spare!";
+            clearInterval(timer);
+        }    
+        // Use clearInterval() to stop the timer
+        
+    }, 1000);
+    renderCards(counter); 
     })
-     
+    
         function renderCards(cc) {
             console.log(cc)
         var temp = cc
