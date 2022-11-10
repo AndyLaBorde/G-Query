@@ -208,8 +208,8 @@ function RenderCards(data) {
 
         var div = document.createElement('div')
 
-        div.innerHTML = `<div class="card m-3 bg-dark" style="width: 18rem;">
-    <img class="card-img-top" src="${dimage}" alt="Card image cap">
+        div.innerHTML = `<div class="card m-3 bg-dark m-3 bg-dark" style="width: 18rem; height: 28rem;">
+    <img class="card-img-top custom-height" src="${dimage}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${genre}</p>
@@ -217,11 +217,10 @@ function RenderCards(data) {
             
             <p class="card-text hide">${platform}</p>
             <p class="card-text hide">${maturity}</p>
-              <p class="card-text hide">${playable}</p>
-   
-             
-              <p class="card-text hide">${released}</p>
-            <a href="#" class="btn btn-primary youtube-btn hide" id="youtube-btn" data-slug="${data.results[i].slug}">YouTube </button></a>
+            <p class="card-text hide">${playable}</p>
+            
+            <p class="card-text hide">${released}</p>
+            <a href="#" class="btn btn-primary youtube-btn" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
         </div>
 </div>`
         cardboxElement.append(div)
@@ -233,3 +232,8 @@ function RenderCards(data) {
 
 
 }
+
+$('#toTrivia').on("click", function(){
+    var newWindow = window.open();
+    newWindow.document.location.href = "./quiz.html";
+})
