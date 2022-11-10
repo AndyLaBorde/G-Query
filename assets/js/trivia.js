@@ -190,11 +190,12 @@ function viewHighScore() {
     gameOverDiv.textContent = "HIGH SCORES:"
 
     for (var i = 0; i < localScoresStorage.length; i++) {
-    var scoresDiv = document.createElement("div");
+    var scoresDiv = document.createElement("li");
 
     console.log(localScoresStorage[i]);
     scoresDiv.textContent = `${localScoresStorage[i].initals}: ${localScoresStorage[i].score}`;
     
-    final.appendChild(scoresDiv);
+    var finalScoresEl = document.getElementById('finalScoresDisplay');
+    finalScoresEl.appendChild(scoresDiv);
     }
 }
