@@ -1,16 +1,18 @@
-var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=hard&type=multiple"
+var triviaURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple"
 var questionArray = []
 var counter = 0
+var correctCounter = 0
 fetch(triviaURL)
     .then(function (response) {
         return response.json()
 
     }).then(function (data) {
 
-        console.log(data)
+        // console.log(data)
         for (let i = 0; i < data.results.length; i++) {
             // console.log(data.results[i])
             var question = data.results[i].question
+            console.log(question)
             var correctAnswer = data.results[i].correct_answer
             var incorrecAnswerArray = []
 
@@ -39,37 +41,46 @@ fetch(triviaURL)
             questionArray.push(questionObject)
 
         }
-        renderCards()
+        // renderCards()
     })
 
-function renderCards(cc) {
-
-    var temp = cc
-    if (temp == undefined) {
-        temp = 0
+    var startBtn = document.getElementById('startBtn');
+    startBtn.addEventListener("click", function() {
+        renderCards(counter)
+    })
+     
+        function renderCards(cc) {
+            console.log(cc)
+        var temp = cc
+        if (temp == undefined) {
+            temp = 0
+        }
+        // // console.log(temp)
+        var answerButtonElement = document.getElementById('answers-btns')
+        // console.log(QuestionArray)
+        var question = questionArray[temp].questionD
+        var choiceArray = questionArray[temp].choices
+        var questionElement = document.getElementById('questions')
+        console.log(questionElement)
+        console.log(questionArray[cc])
+        var currentQuestion = question.replace(/[^a-zA-Z0-9 ]/g, '')
+        questionElement.textContent = currentQuestion
+        choiceArray.forEach(element => {
+            // console.log(element)
+            const button = document.createElement("button");
+            button.innerText = element;
+            answerButtonElement.appendChild(button)
+            button.addEventListener("click", function (event) {
+    
+                selectAnswers(event)
+            });
+    
+    
+        })
     }
-    // console.log(temp)
-    var answerButtonElement = document.getElementById('answers-btns')
-    // console.log(QuestionArray)
-    var question = questionArray[temp].questionD
-    var choiceArray = questionArray[temp].choices
-    var question = document.getElementById('questions')
-    question.textContent = questionObject.questionD.replace(/[^a-zA-Z0-9 ]/g, '')
-    choiceArray.forEach(element => {
-        // console.log(element)
-        const button = document.createElement("button");
-        button.innerText = element;
-        answerButtonElement.appendChild(button)
-        button.addEventListener("click", function (event) {
-
-            selectAnswer(event)
-        });
 
 
-    })
-}
-
-function selectAnswer(event) {
+function selectAnswers(event) {
     // console.log(event.target.innerText)
     var selectAnswer = event.target.innerText
     if (selectAnswer !== questionArray[counter].answer) {
@@ -77,17 +88,25 @@ function selectAnswer(event) {
     }
     else {
         console.log("Correct : " + questionArray[counter].answer)
+        correctCounter++
     }
-    var question = document.getElementById('questions')
-    // question.textContent = ""
+    var questionElement = document.getElementById('questions')
+    console.log(questionElement)
+    questionElement.textContent = ""
     var buttonText = document.getElementById('answers-btns')
     buttonText.textContent = ""
     // console.log(counter)
-    renderCards(counter++)
-}
-
-function nextQuestion() {
+    counter++
     if (questionArray[counter] == undefined) {
-        console.log("gameover")
+        gameOver() } else {
+    renderCards(counter)
     }
 }
+
+function gameOver() {
+    console.log(gameOver)
+    alert("Congratulations! You got " + correctCounter + "/" + questionArray.length + " correct!")
+
+    
+    }
+
