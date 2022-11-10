@@ -11,6 +11,7 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/trivia.css">
     <title>Gamer Quiz</title>
   </head>
   <body>
@@ -19,13 +20,13 @@
     >
       <section class="row vw-50">
         <section class="bg-light rounded p-5 m-5 text-center">
-          <div class="custom-quiz">
+          <div id="quizDiv" class="custom-quiz">
             <p id="seconds"></p>
             <h1>GAMING QUIZ</h1>
             <p>Click start to begin the game!</p>
             <p>Answer all the questions before the time runs out!</p>
             <p>Your score will be the time at the end of the game.</p>
-            <button type="button" class="btn btn-lg btn-secondary" id="startBtn">
+            <button type="button" class="btn btn-lg btn-secondary startBtn" id="startBtn">
               START
             </button>
           </div>
@@ -38,7 +39,7 @@
           <section id="gameOver" class="hide">
             <h1></h1>
             <ul id="displayAnswerList"></ul>
-            <ul id="finalScoresDisplay"></ul>
+            <ul id="finalScoresDisplay" class="overflow:auto custom-list"></ul>
           </section>
         </section>
       </section>

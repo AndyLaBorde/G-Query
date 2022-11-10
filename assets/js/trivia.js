@@ -5,6 +5,8 @@ var scores = JSON.parse(localStorage.getItem("highScores")) || [];
 var gameOverDiv = document.getElementById('gameOver');
 var counter = 0
 var correctCounter = 0
+var questionDiv = document.getElementById('question-container');
+var customQuizEl = document.getElementById("quizDiv");
 fetch(triviaURL)
     .then(function (response) {
         return response.json()
@@ -51,6 +53,9 @@ fetch(triviaURL)
     var startBtn = document.getElementById('startBtn');
     startBtn.addEventListener("click", function() {
         
+        questionDiv.classList.remove('hide');
+        customQuizEl.classList.add('hide');
+
         var timer = setInterval(function() {
         if (timeLeft > 1) {
             timerEl.textContent = "Timer: " + timeLeft + " seconds remaining";
@@ -73,6 +78,7 @@ fetch(triviaURL)
         // Use clearInterval() to stop the timer
         
     }, 1000);
+
     renderCards(counter); 
     })
     
@@ -96,6 +102,7 @@ fetch(triviaURL)
             // console.log(element)
             const button = document.createElement("button");
             button.innerText = element;
+            button.classList.add('answerBtn');
             answerButtonElement.appendChild(button)
             button.addEventListener("click", function (event) {
     
@@ -132,7 +139,7 @@ function selectAnswers(event) {
 }
 
 function gameOver() {
-    
+    gameOverDiv.classList.remove('hide');
     alert("Congratulations! You got " + correctCounter + "/" + questionArray.length + " correct!")
 
     createForm();
@@ -187,15 +194,21 @@ function viewHighScore() {
     
     var localScoresStorage = JSON.parse(localStorage.getItem("highScores")) || [];
     console.log(localScoresStorage);
-    gameOverDiv.textContent = "HIGH SCORES:"
+    var finalScoresEl = document.getElementById('finalScoresDisplay');
+    finalScoresEl.textContent = "HIGH SCORES:"
 
-    for (var i = 0; i < localScoresStorage.length; i++) {
+    var sorted = localScoresStorage;
+    sorted.sort(function (a,b){
+        return b.score -a.score;
+    });
+
+    for (var i = 0; i < sorted.length; i++) {
     var scoresDiv = document.createElement("li");
 
-    console.log(localScoresStorage[i]);
-    scoresDiv.textContent = `${localScoresStorage[i].initals}: ${localScoresStorage[i].score}`;
+    console.log(sorted[i]);
+    scoresDiv.textContent = `${sorted[i].initals}: ${sorted[i].score}`;
     
-    var finalScoresEl = document.getElementById('finalScoresDisplay');
     finalScoresEl.appendChild(scoresDiv);
     }
+    
 }
