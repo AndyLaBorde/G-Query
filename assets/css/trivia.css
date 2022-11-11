@@ -7,9 +7,24 @@
     box-sizing: border-box;
 }
 
-/* .custom-quiz{
-
-} */
+main {
+    background-image: url(../images/arcade-machine-bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+.custom-quizContainer {
+    background-image: url(../images/arcade-bg-trivia.jpg);
+    width: 660px;
+    height:600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    color: #f8f9fa;
+    
+}
 
 
 .hide{

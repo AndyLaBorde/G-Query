@@ -23,14 +23,14 @@ body {
   background-color: black;
 }
 
-.custom-scroll {
+/* .custom-scroll {
   display: none;
-}
-
+} */
+/* 
 .custom-height {
   min-height: 30%;
   max-height: 30%;
-}
+} */
 
 .hide {
   display: none;
@@ -50,8 +50,6 @@ body {
   border: 5px solid #f8f9fa;
   opacity: 80%;
 }
-
-
 
 /* .card .card-body.hover {
 } */
