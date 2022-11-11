@@ -23,3 +23,32 @@ body{
     
 }
 
+.card{
+    background-color: black;
+    width: auto;
+    height: 510px;
+    transition: transform 500ms ease;
+}
+
+.card:hover{
+    transform: scale(1.2);
+}
+
+.card:hover .card-body >*{
+opacity: 1;
+}
+
+#cardBox{
+/*creates gap with all the cards*/    
+    gap: 70px;
+}
+
+.card-body > *:not(.card-title){
+ opacity: 0;
+ transition: opacity 500ms linear;   
+}
+
+.card-img-top{
+height: 160.88px;
+width: 286px;
+}
