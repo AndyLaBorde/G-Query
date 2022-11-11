@@ -19,19 +19,24 @@
     >
       <section class="row vw-50">
         <section class="bg-light rounded p-5 m-5 text-center">
-          <h1>GAMING QUIZ</h1>
-          <p>Click start to begin the game!</p>
-          <p>Answer all the questions before the time runs out!</p>
-          <p>Your score will be the time at the end of the game.</p>
-          <button type="button" class="btn btn-lg btn-secondary">START</button>
+          <div class="custom-quiz">
+            <p id="seconds"></p>
+            <h1>GAMING QUIZ</h1>
+            <p>Click start to begin the game!</p>
+            <p>Answer all the questions before the time runs out!</p>
+            <p>Your score will be the time at the end of the game.</p>
+            <button type="button" class="btn btn-lg btn-secondary" id="startBtn">
+              START
+            </button>
+          </div>
           <h1 id="timerText"></h1>
           <section id="question-container" class="hide">
-            <div id="questions">Questions</div>
+            <div id="questions"></div>
             <div id="answers-btns" class="btn-layout"></div>
           </section>
 
           <section id="gameOver" class="hide">
-            <h1>You completed the game</h1>
+            <h1></h1>
             <ul id="displayAnswerList"></ul>
             <ul id="finalScoresDisplay"></ul>
           </section>

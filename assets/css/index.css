@@ -1,54 +1,103 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    background-color: black;
+body {
+  background-color: black;
+  overflow: hidden;
 }
 
-.custom-bg-gif{
-    background-image: url("../images/hacker-gif.gif");
-    background-size: 100%;
-    max-height: fit-content;
+.custom-bg-gif {
+  background-image: url("../images/hacker-gif.gif");
+  background-size: 100%;
+  max-height: fit-content;
 }
 
 .custom-bg-img {
-    background-image: url("../images/gamer-img.jpg");
-    height:100%;
-    background-position: center;
-    /* background-position: bottom; */
-    background-repeat: no-repeat;
-    background-color: black;
-    
-    
+  background-image: url("../images/gamer-img.jpg");
+  height: 100%;
+  background-position: center;
+  /* background-position: bottom; */
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+ /* .custom-scroll {
+  display: none;
+} */
+
+/* .custom-height { */
+  /* border-top-left-radius: calc(0.25rem - 1px);
+        border-top-right-radius: calc(0.25rem - 1px); */
+  /* min-height: 30%;
+  max-height: 30%; */
+/* } */
+.hide {
+  display: none;
+}
+/* .card {
+  height: 18rem;
+    opacity: 80%;
+} */
+/* .card:hover .hide {
+  display: block;
+} */
+/* .card:hover {
+  opacity: 100%;
+  background-color: aliceblue !important;
+  color: black;
+  border: 5px solid red;
+} */
+.card .card-body.hover {
 }
 
 .card{
-    background-color: black;
-    width: auto;
-    height: 510px;
+    height: 18rem;
     transition: transform 500ms ease;
+    opacity: 80%;
 }
 
 .card:hover{
     transform: scale(1.2);
+    height: 36rem;
+    border: 5px solid #f8f9fa;
+    color: #f8f9fa;
+    transition: transform 500ms ease;
 }
 
-.card:hover .card-body >*{
-opacity: 1;
+.card:hover .hide{
+    display: block;
+    transition: transform 500ms ease;
+    
 }
+/* .card:hover .card-body >*{
+opacity: 1;
+} */
 
 #cardBox{
 /*creates gap with all the cards*/    
     gap: 70px;
 }
 
-.card-body > *:not(.card-title){
+/* .card-body > *:not(.card-title){
  opacity: 0;
  transition: opacity 500ms linear;   
+} */
+.youtube-btn:hover {
+  transform: translateY(4px);
+  background-color: red;
 }
 
-.card-img-top{
+/* .card-img-top{
 height: 160.88px;
 width: 286px;
+} */
+
+.card img{
+    max-height: 50%;
+    min-height: 50%;
+}
+.card:hover img{
+max-height: 30%;
+min-height: 30%;
 }
