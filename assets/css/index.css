@@ -51,8 +51,14 @@ body {
   opacity: 80%;
 }
 
-/* .card .card-body.hover {
-} */
+.custom-card:hover {
+  height: 36rem;
+  opacity: 100%;
+  background-color: dark !important;
+  color: #f8f9fa !important;
+  border: 5px solid #f8f9fa;
+  opacity: 80%;
+}
 
 .card img {
   max-height: 50%;
