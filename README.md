@@ -55,11 +55,23 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 
 ## Deployed Application
 
-// Under Construction //
+![g-Query load page](../../../../../../../C:/Users/andik/OneDrive/Desktop/Bootcamp/Gamer-Q/assets/images/Deployed_1.png)
 
+![g-query active](../../../../../../../C:/Users/andik/OneDrive/Desktop/Bootcamp/Gamer-Q/assets/images/Deployed_2.png)
+
+![trivia load page](../../../../../../../C:/Users/andik/OneDrive/Desktop/Bootcamp/Gamer-Q/assets/images/Deployed_3.png)
+
+![quiz questions example](../../../../../../../C:/Users/andik/OneDrive/Desktop/Bootcamp/Gamer-Q/assets/images/Deployed_4.png)
+
+![highscores page](../../../../../../../C:/Users/andik/OneDrive/Desktop/Bootcamp/Gamer-Q/assets/images/Deployed_5.png)
 ## Credits
 
 Collaborators: Kermit and the Frogs
+
+- Siddharth Desai  
+- Garrett Anderson  
+- Omar Yassine  
+- Andrew LaBorde  
 
 ## License
 

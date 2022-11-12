@@ -208,7 +208,7 @@ function RenderCards(data) {
 
         var div = document.createElement('div')
 
-        div.innerHTML = `<div class="card m-3 bg-dark m-3 bg-dark" style="width: 18rem; height: 28rem;">
+        div.innerHTML = `<div class="card custom-card m-3 bg-dark" style="width: 18rem; height: 18rem;">
     <img class="card-img-top custom-height" src="${dimage}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
@@ -220,7 +220,7 @@ function RenderCards(data) {
             <p class="card-text hide">${playable}</p>
             
             <p class="card-text hide">${released}</p>
-            <a href="#" class="btn btn-primary youtube-btn" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
+            <a href="#" class="btn btn-primary youtube-btn hide" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
         </div>
 </div>`
         cardboxElement.append(div)

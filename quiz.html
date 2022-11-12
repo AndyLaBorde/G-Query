@@ -11,34 +11,36 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    
+    <link rel="stylesheet" href="./assets/css/trivia.css">
     <title>Gamer Quiz</title>
   </head>
   <body>
     <main
-      class="d-flex vh-100 bg-dark align-items-center justify-content-center"
+      class="d-flex vw-100 bg-dark align-items-center justify-content-center"
     >
-      <section class="row vw-50">
-        <section class="bg-light rounded p-5 m-5 text-center">
-          <div class="custom-quiz">
+      <section class="row p-3 vh-100 d-flex align-items-center">
+        <section class=" custom-quizContainer rounded  text-center justify-content-center p-5 align-items-around">
+          <div id="quizDiv" class="custom-quiz p-5 m-5 justify-content-center align-items-center">
             <p id="seconds"></p>
             <h1>GAMING QUIZ</h1>
             <p>Click start to begin the game!</p>
             <p>Answer all the questions before the time runs out!</p>
             <p>Your score will be the time at the end of the game.</p>
-            <button type="button" class="btn btn-lg btn-secondary" id="startBtn">
+            <button type="button" class="btn btn-lg btn-secondary startBtn" id="startBtn">
               START
             </button>
           </div>
           <h1 id="timerText"></h1>
-          <section id="question-container" class="hide">
-            <div id="questions"></div>
-            <div id="answers-btns" class="btn-layout"></div>
+          <section id="question-container" class="custom-questionContainer hide">
+            <h3 id="questions" class="row"></h3>
+            <div id="answers-btns" class="btn-layout row"></div>
           </section>
 
           <section id="gameOver" class="hide">
             <h1></h1>
             <ul id="displayAnswerList"></ul>
-            <ul id="finalScoresDisplay"></ul>
+            <ul id="finalScoresDisplay" class="overflow:auto custom-list"></ul>
           </section>
         </section>
       </section>
