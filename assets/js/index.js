@@ -14,7 +14,6 @@ var counter = 0;
 formPanel = document.getElementById('formPanel')
 
 function genreFetch(genreURL) {
-
     fetch(genreURL)
         .then(function (response) {
             return response.json()
@@ -75,13 +74,15 @@ fetch(gameURL)
 
             var rating = data.results[i].rating
 
+
             var div = document.createElement('div')
+
             div.innerHTML = `<div class="card m-3 bg-dark" style="width: 18rem;">
     <img class="card-img-top custom-height" src="${dimage}" alt="Card image cap">
         <div class="card-body m-3">
             <h5 class="card-title">${title}</h5>
             <p class="card-text hide">${genre}</p>
-            <p class="card-text hide" id="stars">Rating: ${rating} </p>
+            <p class="card-text hide" id= "rating" data-star="${rating}">Rating: ${rating} </p>
             
             
             <p class="card-text hide">${platform}</p>
@@ -92,12 +93,25 @@ fetch(gameURL)
             <a href="#" class="btn btn-primary youtube-btn align-item-end hide" id="youtube-btn" data-slug="${data.results[i].slug}">YouTube </button></a>
         </div>
 </div>`
+
+
             cardboxElement.append(div)
+            addStar(div)
 
         }
 
 
     })
+function addStar(data) {
+
+    for (var child of data.children) {
+        console.log(child.children[1].children[2].getAttribute('data-star'))
+        var star = child.children[1].children[2].getAttribute('data-star')
+        if (star > 4.5) {
+            data.children[0].style.border = "solid 5px gold"
+        }
+    }
+}
 var youtubeButton = document.getElementById('cardBox')
 
 
@@ -189,7 +203,7 @@ function RenderCards(data) {
         <div class="card-body m-3">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${genre}</p>
-            <p class="card-text" id="stars">Rating: ${rating}</p>
+            <p class="card-text hide"  id="stars"  data-star="${rating}" >Rating: ${rating}</p>
             
             <p class="card-text hide">${platform}</p>
             <p class="card-text hide">${maturity}</p>
@@ -201,6 +215,7 @@ function RenderCards(data) {
 </div>`
 
         cardboxElement.append(div)
+        addStar(div)
     }
     formPanel.reset()
 
