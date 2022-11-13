@@ -111,7 +111,7 @@ function addStar(data) {
         var star = child.children[1].children[2].getAttribute('data-star')
         if (star > 4.5) {
             console.log(data.children[0].children[1].children[2])
-            data.children[0].children[1].children[2].innerHTML = star + " " + " " + starElemnt
+            data.children[0].children[1].children[2].innerHTML = "Rating: " + star + " " + " " + starElemnt
 
         }
 
