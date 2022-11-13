@@ -44,7 +44,7 @@ body {
 }
 .card:hover {
   height: 36rem;
-  opacity: 100%;
+  opacity: 100% !important;
   background-color: dark !important;
   color: #f8f9fa !important;
   border: 5px solid #f8f9fa;

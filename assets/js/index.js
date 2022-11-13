@@ -83,7 +83,7 @@ fetch(gameURL)
         <div class="card-body m-3">
             <h5 class="card-title">${title}</h5>
             <p class="card-text hide">${genre}</p>
-            <p class="card-text hide" id="stars">${rating} </p>
+            <p class="card-text hide" id="stars">Rating: ${rating} </p>
             
             
             <p class="card-text hide">${platform}</p>
@@ -196,7 +196,7 @@ function RenderCards(data) {
         // playable is an array need to to get all playable per game for single player or multiplayer
         var playable
         if (data.results[i].tags.length == 0) {
-            var playable = "None"
+            var playable = "Not Found"
         }
         else {
             var playable = data.results[i].tags[0].name
@@ -208,19 +208,19 @@ function RenderCards(data) {
 
         var div = document.createElement('div')
 
-        div.innerHTML = `<div class="card custom-card m-3 bg-dark" style="width: 18rem; height: 18rem;">
+        div.innerHTML = `<div class="card m-3 bg-dark" style="width: 18rem;">
     <img class="card-img-top custom-height" src="${dimage}" alt="Card image cap">
-        <div class="card-body">
+        <div class="card-body m-3">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${genre}</p>
-            <p class="card-text" id="stars">${rating}</p>
+            <p class="card-text" id="stars">Rating: ${rating}</p>
             
             <p class="card-text hide">${platform}</p>
             <p class="card-text hide">${maturity}</p>
             <p class="card-text hide">${playable}</p>
             
             <p class="card-text hide">${released}</p>
-            <a href="#" class="btn btn-primary youtube-btn hide" data-slug="${data.results[i].slug}">YouTube </button>>Go somewhere</a>
+            <a href="#" class="btn btn-primary youtube-btn hide" data-slug="${data.results[i].slug}">YouTube </button></a>
         </div>
 </div>`
         cardboxElement.append(div)
