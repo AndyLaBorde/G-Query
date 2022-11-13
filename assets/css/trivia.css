@@ -92,3 +92,6 @@ main {
 li {
   list-style: none;
 }
+li {
+  color: yellow;
+}
