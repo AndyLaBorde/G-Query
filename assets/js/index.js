@@ -60,8 +60,6 @@ fetch(gameURL)
         return response.json()
 
     }).then(function (data) {
-
-        console.log(data)
         for (let i = 0; i < data.results.length; i++) {
 
             var title = data.results[i].name
@@ -108,7 +106,6 @@ youtubeButton.addEventListener('click', function (event) {
     if (event.target.id == 'youtube-btn') {
 
         var slugs = event.target.getAttribute("data-slug");
-        console.log("slugs")
 
         var youtubeURLs = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
         fetch(youtubeURLs)
@@ -117,11 +114,7 @@ youtubeButton.addEventListener('click', function (event) {
             })
             .then(function (data) {
                 let videoid = data.items[0].id.videoId
-                console.log(videoid)
-
-
                 target = 'https://www.youtube.com/watch?app=desktop&v=' + videoid;
-                console.log(target)
                 window.open(target, '_blank')
             })
     }
@@ -132,11 +125,9 @@ var submit = document.getElementById('submit')
 submit.addEventListener('click', function (event) {
     event.preventDefault()
     validateSearch()
-
 })
 
 function validateSearch() {
-
     var genreOptions = document.getElementById('inputGroupSelect01').value
     var platformOptions = document.getElementById('inputGroupSelect02').value
     var searchGame = document.getElementById('searchGame').value
@@ -148,10 +139,7 @@ function validateSearch() {
     }
 
     if (genreOptions == "" && platformOptions !== "" && searchGame == "") {
-
-        // var platformsURL = 'https://api.rawg.io/api/platforms?&key=' + key
         var platformsURL = "https://api.rawg.io/api/games?key=a799090a494c45c5b353265fd2772ec0&platforms=" + platformOptions
-
         platformFetch(platformsURL)
 
     }
@@ -161,24 +149,14 @@ function validateSearch() {
         genreFetch(genreLink)
     }
     if (searchGame !== "" && platformOptions == "" && genreOptions == "") {
-
         var gameURL2 = 'https://api.rawg.io/api/games?key=' + key + '&search=' + searchGame
-
         gameFetch(gameURL2)
     }
 }
 
-
-
-
 function RenderCards(data) {
-
-
     cardboxElement.innerHTML = ""
     for (let i = 0; i < data.results.length; i++) {
-
-
-
         var title = data.results[i].name
         var dimage = data.results[i].background_image
         // genre is an array need to to get all platforms per game
@@ -203,9 +181,7 @@ function RenderCards(data) {
         }
 
         var released = data.results[i].released
-
         var rating = data.results[i].rating
-
         var div = document.createElement('div')
 
         div.innerHTML = `<div class="card m-3 bg-dark" style="width: 18rem;">
@@ -223,15 +199,13 @@ function RenderCards(data) {
             <a href="#" class="btn btn-primary youtube-btn hide" data-slug="${data.results[i].slug}">YouTube </button></a>
         </div>
 </div>`
+
         cardboxElement.append(div)
-
-
-
     }
     formPanel.reset()
 
-
 }
+
 
 $('#toTrivia').on("click", function () {
     var newWindow = window.open();
