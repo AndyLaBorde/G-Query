@@ -1,76 +1,97 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 main {
-    background-image: url(../images/arcade-machine-bg.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: black;
+  background-image: url(../images/arcade-machine-bg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 .custom-quizContainer {
-    background-image: url(../images/arcade-bg-trivia.jpg);
-    width: 660px;
-    height:600px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: black;
-    color: #f8f9fa;
-    
+  background-image: url(../images/arcade-bg-trivia.jpg);
+  width: 660px;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  color: #f8f9fa;
 }
 
-
-.hide{
-    display:none;
+.hide {
+  display: none;
 }
 
 .btn-layout {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+  margin-top: 15%;
 }
 
 .answerBtn {
-    background-color: gray;
-    border: 2.5px solid gray;
-    font-size: 20px;
-    font-family: "Fuzzy Bubbles", cursive;
+  background-color: gray;
+  border: 2.5px solid gray;
+  font-size: 20px;
+  font-family: "Fuzzy Bubbles", cursive;
 
-    border-radius: 5px;
-    padding: 5% 5%;
-    color: white;
+  border-radius: 5px;
+  padding: 5% 5%;
+  color: white;
 }
 
 .answerBtn:hover {
-    border-color: red;
-    opacity: 30%;
-    background-color: blue;
-    transform: translateY(5px);
+  border-color: red;
+  opacity: 30%;
+  background-color: blue;
+  transform: translateY(5px);
 }
 
-.startBtn {
-    background-color: darkgrey;
-    border: 2.5px solid gray;
-    font-size: 20px;
-    font-family: "Fuzzy Bubbles", cursive;
-    
-    border-radius: 5px;
-    padding: 5% 5%;
-    color: white;
+.startBtn,
+.playAgain {
+  background-color: darkgrey;
+  border: 2.5px solid gray;
+  font-size: 20px;
+  font-family: "Fuzzy Bubbles", cursive;
+
+  border-radius: 5px;
+  padding: 5% 5%;
+  color: white;
 }
 
-.custom-list li:first-child{
-    background-color: green;
+.custom-list li:first-child {
+  background-color: green;
 }
 
 .custom-list li:last-child {
-    background-color: red;
+  background-color: red;
+}
+
+#createForm {
+  margin-top: 5%;
+
+  border: 5px solid yellow;
+}
+#createBtn {
+  font-size: larger;
+  color: white;
+  background-color: darkgray;
+  width: 100%;
+}
+#createInput {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+li {
+  color: yellow;
 }
