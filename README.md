@@ -13,9 +13,9 @@ As a user, I want to open the page and either type in a name, search through a g
 
 ## Deployed Application
 
-![g-Query gif](../Gamer-Q/assets/images/gamerQ.gif)
+![g-Query gif](assets/images/gamerQ.gif)
 
-![g-Query Trivia gif](../Gamer-Q/assets/images/GamerQT.gif)
+![g-Query Trivia gif](assets/images/GamerQT.gif)
 
 [Deployed Github Page]
 
