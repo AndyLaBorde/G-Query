@@ -126,7 +126,7 @@ var youtubeButton = document.getElementById('cardBox')
 youtubeButton.addEventListener('click', function (event) {
 
     if (event.target.id == 'youtube-btn') {
-
+        console.log("event.target")
         var slugs = event.target.getAttribute("data-slug");
 
         var youtubeURLs = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + slugs + '&key=' + youtubeApiKey;
@@ -221,7 +221,7 @@ function RenderCards(data) {
             <p class="card-text hide">${playable}</p>
             
             <p class="card-text hide">${released}</p>
-            <a href="#" class="btn btn-primary youtube-btn hide" data-slug="${data.results[i].slug}">YouTube </button></a>
+            <a href="#" class="btn btn-primary youtube-btn hide" id="youtube-btn" data-slug="${data.results[i].slug}">YouTube </button></a>
         </div>
 </div>`
 
