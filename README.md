@@ -35,7 +35,6 @@ Collaborators: Kermit and the Frogs
 - [Garrett Anderson](https://github.com/GarrettA01)
 - [Omar Yassine](https://github.com/oyassine1999)
 - [Andrew LaBorde](https://github.com/AndyLaBorde)
-=======
 
 
 ## License
