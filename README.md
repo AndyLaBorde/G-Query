@@ -21,8 +21,15 @@ As a user, I want to open the page and either type in a name, search through a g
 
 ## Credits
 
-Collaborators: Kermit and the Frogs
+* https://getbootstrap.com/
+* https://kit.fontawesome.com/731ef402c1.js
+* https://opentdb.com/api_config.php
+* https://rawg.io/
+* https://developers.google.com/youtube/v3
+* https://www.w3schools.com/
+* https://stackoverflow.com/
 
+Collaborators: Kermit and the Frogs
 - Siddharth Desai
 - Garrett Anderson
 - Omar Yassine
