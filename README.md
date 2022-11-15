@@ -78,5 +78,5 @@ Collaborators: Kermit and the Frogs
 Please refer to the LICENSE in the repo.
 
 ## Links
-[Deployed Github Page](https://andylaborde.github.io/Gamer-Q/)
-[Github](https://github.com/AndyLaBorde/Gamer-Q)
+* [Deployed Github Page](https://andylaborde.github.io/Gamer-Q/)
+* [Github](https://github.com/AndyLaBorde/Gamer-Q)
