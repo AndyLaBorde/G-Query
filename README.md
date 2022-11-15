@@ -15,9 +15,10 @@ As a user, I want to open the page and either type in a name, search through a g
 
 ![g-Query gif](assets/images/gamerQ.gif)
 
-![g-Query Trivia gif](assets/images/GamerQT.gif)
+![g-Query Trivia gif](assets/images/trivia.gif)
 
-https://andylaborde.github.io/Gamer-Q/
+
+[Deployed Github Page](https://andylaborde.github.io/Gamer-Q/)
 
 ## Credits
 
@@ -30,10 +31,12 @@ https://andylaborde.github.io/Gamer-Q/
 * https://stackoverflow.com/
 
 Collaborators: Kermit and the Frogs
-- Siddharth Desai
-- Garrett Anderson
-- Omar Yassine
-- Andrew LaBorde
+- [Siddharth Desai](https://github.com/shd327)
+- [Garrett Anderson](https://github.com/GarrettA01)
+- [Omar Yassine](https://github.com/oyassine1999)
+- [Andrew LaBorde](https://github.com/AndyLaBorde)
+=======
+
 
 ## License
 
