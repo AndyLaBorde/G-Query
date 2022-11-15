@@ -1,6 +1,7 @@
 # Gamer-Q : Video Game Search Engine
 
-#Description 
+## Description 
+
 Our mission is to create an application to help gamers find their next game with ease. The gaming community is spread far and wide and it was our job to consolidate all games for the convenience of the user. With  Game-Q a user can search by genre, platform, and the game name itself. As a user you will be provided with a library of games based on your criteria giving you game ratings, infomforamtion on the game as well as a link to watch the gameplay on Youtube. Additonally we added a new feature to test your knowledge of gaming with a trivia game.
 
 
