@@ -33,14 +33,15 @@ Then I am presented with a series of gaming questions with countdown
 When the trivia is over I am presented with my score and a list of scores
 When I view the score list 
 Then I am presented with the top score in green and lowest score in red
-
+```
 
 ## Contents
 
-1. [User Story](#user-story)
-2. [Deployed Application](#deployed-application)
+1. [Deployed Application](#deployed-application)
+2. [Installation](#installation)
 3. [Credits](#credits)
 4. [License](#license)
+5. [Links](#links)
 
 
 ## Deployed Application
@@ -50,7 +51,9 @@ Then I am presented with the top score in green and lowest score in red
 ![g-Query Trivia gif](assets/images/trivia.gif)
 
 
-[Deployed Github Page](https://andylaborde.github.io/Gamer-Q/)
+## Installation
+* N/A
+
 
 ## Credits
 
@@ -73,3 +76,7 @@ Collaborators: Kermit and the Frogs
 ## License
 
 Please refer to the LICENSE in the repo.
+
+## Links
+[Deployed Github Page](https://andylaborde.github.io/Gamer-Q/)
+[Github](https://github.com/AndyLaBorde/Gamer-Q)
