@@ -8,7 +8,7 @@ Our mission is to create an application to help gamers find their next game with
 ## User Story
 
 ```
-AS A traveler
+As a user,
 I want to open the page and either type in a name, search through a genre, or search through a platform
 so that I may locate a specific game, a youtube video of that game, and aspects and ratings of said game.
 Additionaly, I'd like to click on the gif under the search query, be taken to a page 
