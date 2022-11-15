@@ -17,7 +17,7 @@ As a user, I want to open the page and either type in a name, search through a g
 
 ![g-Query Trivia gif](assets/images/GamerQT.gif)
 
-[Deployed Github Page]
+https://andylaborde.github.io/Gamer-Q/
 
 ## Credits
 
